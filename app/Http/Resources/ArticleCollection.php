@@ -8,7 +8,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 class ArticleCollection extends ResourceCollection
 {
 
-    //public $collects = ArticleResource::class;
+    //Se usa cuando se quiere devolver una colección de recursos y los nombre entre ResourceCollection y Resource no son iguales
+    //public $collects = ArticlesResource::class;
 
     /**
      * Transform the resource collection into an array.

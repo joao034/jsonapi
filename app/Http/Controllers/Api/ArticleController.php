@@ -19,4 +19,18 @@ class ArticleController extends Controller
     {
         return ArticleCollection::make(Article::all());
     }
+
+    public function store(Request $request)
+    {
+        //$article = Article::create($request->input('data.attributes')); No hacerlo si se desactiva la asignacion masiva
+
+        //buena practica
+       $article = Article::create([
+            'title' => $request->input('data.attributes.title'),
+            'slug' => $request->input('data.attributes.slug'),
+            'content' => $request->input('data.attributes.content')
+        ]);
+
+        return ArticleResource::make($article);
+    }
 }
