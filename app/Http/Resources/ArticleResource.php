@@ -16,7 +16,7 @@ class ArticleResource extends JsonResource
     {
         return [
             'type' => 'articles',
-            'id' => $this->resource->getRouteKey(),
+            'id' => (string) $this->resource->getRouteKey(),
             'attributes' => [
                 'title' => $this->resource->title,
                 'slug' => $this->resource->slug,
@@ -29,7 +29,7 @@ class ArticleResource extends JsonResource
         ];
     }
 
-    //implementacion de los headers
+    //implementacion del header location
     public function toResponse($request)
     {
         return parent::toResponse($request)->withHeaders(

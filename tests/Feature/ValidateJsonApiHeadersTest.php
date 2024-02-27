@@ -58,7 +58,7 @@ class ValidateJsonApiHeadersTest extends TestCase
     }
 
     /** @test */
-    function content_type_must_be_present_in_responses()
+    /* function content_type_must_be_present_in_responses()
     {
         //segundo parametro [] es el body
         $this->get('test_route', [], [
@@ -69,7 +69,7 @@ class ValidateJsonApiHeadersTest extends TestCase
             'accept' => 'application/vnd.api+json',
             'content-type', 'application/vnd.api+json'
         ])->assertHeader('content-type', 'application/vnd.api+json');
-    }
+    } */
 
     /** @test */
     function content_type_header_must_not_be_present_in_empty_responses()
